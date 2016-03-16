@@ -1,0 +1,19 @@
+var expensiveInStockProducts =
+from prod in products
+where prod.UnitsInStock > 0 && prod.UnitPrice > (decimal)3.00
+select prod;
+
+var waCustomers =
+from customer in customers
+where customer.Region == "WA"
+select customer;
+
+var sortedProducts =
+from prod in products
+orderby prod.ProductName descending
+select prod.ProductName;
+
+var sortedDoubles =
+from d in doubles
+orderby d descending
+select d;
